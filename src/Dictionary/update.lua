@@ -35,7 +35,7 @@ local function update<K, V, U, C>(
 ): { [K]: V | U | C }
 	local result: { [K]: any } = copy(dictionary)
 
-	if result[key] then
+	if result[key] ~= nil then
 		if updater then
 			result[key] = updater(result[key], key)
 		end
